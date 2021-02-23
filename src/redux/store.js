@@ -1,6 +1,4 @@
-let reRender = () =>{
-
-}
+let reRender 
 
 let state = {
     header:{
