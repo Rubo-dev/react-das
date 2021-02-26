@@ -1,0 +1,17 @@
+@import './assets/styles/includes/variables';
+
+*{
+  outline: none;
+}
+
+.layout{
+  width: 98%;
+  margin: 0 auto;
+}
+a{
+  text-decoration: none;
+  color: $lightColor;
+  &:hover{
+    color:$darkColor;
+  }
+}

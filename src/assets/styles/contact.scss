@@ -1,0 +1,67 @@
+@import './includes/variables';
+
+.block{
+    display: grid;
+    grid-template-areas:'name email'
+                        'message message'
+                        '1fr submit';
+    grid-row-gap: 10px;
+    grid-column-gap:30px;
+    width: 100%;
+    justify-content: center;
+}
+.name{
+    grid-area:name;
+    border-radius: 30px;
+    padding: .5em;
+    outline: none;
+    border:0;
+    box-shadow: 0px 0px 12px -3px $primaryColor;
+    cursor: pointer;
+    transition: all .2s; 
+}
+.email{
+    grid-area: email;
+    border-radius: 30px;
+    padding: .5em;
+    border: 0;
+    box-shadow: 0px 0px 12px -3px $primaryColor;
+    cursor: pointer;
+    transition: all .2s; 
+}
+.message{
+    grid-area:message;
+    border-radius: 30px;
+    padding: .5em;
+    border: 0;
+    resize: none;
+    box-shadow: 0px 0px 12px -3px $primaryColor;
+    cursor: pointer;
+    transition: all .2s; 
+}
+.name:focus,.email:focus,.message:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px 2px $primaryColor;
+}
+.submitBtn{
+    grid-area:submit;
+    background-color:$darkSecondary;
+    color:$fontColor;
+    border-radius: 30px;
+    border:0;
+    padding: .5em 1em;
+    outline: none;
+    &:hover{
+        background-color:$lightSecondary;
+        cursor: pointer;
+    }
+}
+@media(max-width:767px){
+    .block{
+        display: grid;
+        grid-template-areas:'name'
+                            'email'
+                            'message'
+                            'submit';
+    }
+}

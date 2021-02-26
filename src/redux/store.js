@@ -20,6 +20,9 @@ let state = {
     pages:{
         home:{
             counter:0,
+            // slide_images:[
+            //     '/'
+            // ]
         },
         contact_page:{
             contact_form:{
@@ -36,6 +39,10 @@ let state = {
                 textarea:{
                     value:'',
                     placeholder:'Write your message'
+                },
+                button:{
+                    type:'submit',
+                    value:'Send',
                 }
             }
             
