@@ -22,17 +22,17 @@ function App(props) {
           <Home data = {props.state.pages.home} />
         </Route>
         <Route path = '/contact-us'>
-          <Contact data = {props.state.pages.contact_page} setName = {props.setName} setEmail = {props.setEmail} setText = {props.setText} />
+          <Contact data = {props.state.pages.contact_page} dispatch = {props.dispatch}/>
         </Route>
         <Route path = '/about-us'>
           <About />
         </Route>
-        <Route path = '/vlo'>
+        {/* <Route path = '/vlo'>
           Es Vlona
         </Route>
         <Route path='/rubo' >
           Es Rubona
-        </Route>
+        </Route> */}
         <Footer data = {props.state.footer} />
       </div>
     </Router>
