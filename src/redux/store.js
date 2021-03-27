@@ -1,6 +1,9 @@
+const handleNameChange = 'SET-NAME';
+const handleEmailChange = 'SET-EMAIL';
+const handleTextChange = 'SET-TEXT';
+
 let store = {
     _subscriber() {
-        console.log('state')
     },
     _state : {
         header:{
@@ -70,19 +73,22 @@ let store = {
         this._subscriber = observer;
     }, 
     dispatch(action){
-       if (action.type === 'SET-NAME'){
-        this._state.pages.contact_page.contact_form.name.value = action.value.target.value;   
+       if (action.type === handleNameChange){
+        this._state.pages.contact_page.contact_form.name.value = action.value;   
         this._subscriber(this._state);
-       } else if( action.type === 'SET-EMAIL'){
-        this._state.pages.contact_page.contact_form.email.value = action.value.target.value;
+       } else if( action.type === handleEmailChange){
+        this._state.pages.contact_page.contact_form.email.value = action.value;
         this._subscriber(this._state);
-       }else if(action.type === 'SET-TEXT'){
-        this._state.pages.contact_page.contact_form.textarea.value = action.value.target.value;
+       }else if(action.type === handleTextChange){
+        this._state.pages.contact_page.contact_form.textarea.value = action.value;
         this._subscriber(this._state);
        }
-    }
-    
+    }  
 }
+
+export const handleNameChangeActionCreator = (newName) =>({type:handleNameChange, value:newName.target.value})
+export const handleEmailChangeActionCreator = (newEmail) => ({type:handleEmailChange, value:newEmail.target.value})
+export const handleTextChangeActionCreator = (newText) =>({type:handleTextChange, value:newText.target.value})
 
 export default store;
 window.store = store;

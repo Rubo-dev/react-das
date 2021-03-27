@@ -11,8 +11,6 @@ import Footer from './components/Footer';
 import Contact from './components/ContactUs';
 import About from './components/AboutUs';
 
-
-
 function App(props) {
   return (
     <Router>
@@ -38,7 +36,5 @@ function App(props) {
     </Router>
   );
 }
-
-
 
 export default App;
